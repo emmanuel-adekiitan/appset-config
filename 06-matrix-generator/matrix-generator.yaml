@@ -1,0 +1,50 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: app1-matrix-clusters
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions:
+    - missingkey=error
+
+  generators:
+    - matrix:
+        generators:
+          # Dimension 1: environments/directories from Git
+          - git:
+              repoURL: https://github.com/emmanuel-adekiitan/appset-config.git
+              revision: main
+              directories:
+                - path: "02-app1-config-repo/*"
+
+          # Dimension 2: target clusters (mumbai and nvirginia)
+          - list:
+              elements:
+                - region: mumbai
+                  clusterName: mumbai
+                - region: nvirginia
+                  clusterName: nvirginia
+
+  template:
+    metadata:
+      name: "app1-matrix-{{.path.basename}}-to-{{.clusterName}}"
+    spec:
+      project: default
+
+      source:
+        repoURL: https://github.com/emmanuel-adekiitan/appset-config.git
+        targetRevision: main
+        path: "{{.path.path}}/manifests"
+
+      destination:
+        name: "{{.clusterName}}"
+        namespace: "app1-{{.path.basename}}-{{.clusterName}}-ns"
+
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          

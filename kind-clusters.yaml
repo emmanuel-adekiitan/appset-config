@@ -1,0 +1,14 @@
+# Hub Cluster (Runs Argo CD and ApplicationSet Controller)
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: argocd-hub
+---
+# Spoke Cluster 1 (Simulates US Region)
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: mumbai
+---
+# Spoke Cluster 2 (Simulates EU Region)
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: nvirginia
