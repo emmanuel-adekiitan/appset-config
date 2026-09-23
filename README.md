@@ -1,17 +1,4 @@
-
----
-
-# Argo CD ApplicationSets Explained | Scaling GitOps Across Clusters & Microservices
-
-## Video reference for this lecture is the following:
-
----
-
-## ⭐ Support the Project
-
-If this **repository** helps you, give it a ⭐ to show your support and help others discover it!
-
----
+Argo CD ApplicationSets Explained | Scaling GitOps Across Clusters & Microservices
 
 ## Table of Contents
 
