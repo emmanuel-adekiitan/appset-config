@@ -1,4 +1,3 @@
-Here is the updated and fully integrated README for your GitHub repository. It preserves all the original sections and content from your reference, while seamlessly updating **Demo 1** and all relevant sections to accurately reflect your customized local Kind environment setup (including the `emmanuel-adekiitan/appset-config.git` repository, the `02-app1-config-repo/` folder structure, and your local Kind cluster names `mumbai` and `nvirginia`).
 
 ---
 
