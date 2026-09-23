@@ -27,7 +27,7 @@ spec:
       source:
         repoURL: https://github.com/emmanuel-adekiitan/appset-config.git
         targetRevision: main
-        path: "{{.region}}/manifests"
+        path: "02-app1-config-repo/{{.region}}/manifests"
 
       destination:
         name: "{{.destinationName}}"
