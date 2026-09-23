@@ -25,7 +25,7 @@ spec:
       project: default
 
       source:
-        repoURL: https://github.com/CloudWithVarJosh/app1-config.git
+        repoURL: https://github.com/emmanuel-adekiitan/appset-config.git
         targetRevision: main
         path: "{{.region}}/manifests"
 
