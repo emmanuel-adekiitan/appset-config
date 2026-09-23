@@ -12,10 +12,10 @@ spec:
   - list:
       elements:
       - region: mumbai
-        destinationName: in-cluster
+        destinationName: mumbai
         namespace: app1-mumbai-ns
       - region: nvirginia
-        destinationName: varun.joshi@cwvj-nvirginia.us-east-1.eksctl.io
+        destinationName: nvirginia
         namespace: app1-nvirginia-ns
 
   template:
